@@ -1,0 +1,27 @@
+{
+  "storage.mysql-engine.max-size": 104857600,
+  "diffusion.ssh-port": 2233,
+  "diffusion.ssh-user": "git",
+  "environment.append-paths": [
+    "/usr/lib/git-core",
+    "/usr/local/lib/python3.10/dist-packages/Pygments-2.15.1.dist-info"
+  ],
+  "diffusion.allow-http-auth": true,
+  "metamta.default-address": "xxxxxx@163.com",
+  "cluster.mailers": [
+    {
+      "key": "my-mailer",
+      "type": "smtp",
+      "options": {
+        "host": "smtp.163.com",
+        "port": 25,
+        "user": "xxxxxx@163.com",
+        "password": "xxxxxxxx"
+      }
+    }
+  ],
+  "phd.user": "phd",
+  "phabricator.base-uri": "http://172.16.12.81:9999",
+  "mysql.pass": "12345678",
+  "mysql.host": "database"
+}

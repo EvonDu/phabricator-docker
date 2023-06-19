@@ -1,0 +1,31 @@
+version: '3'
+services:
+  phabricator:
+    image: evon/phabricator
+    volumes:
+       - ./data/config/:/opt/phabricator/conf/local
+       - ./data/repo/:/var/repo
+       - ./extensions/:/opt/phabricator/src/extensions
+       - ./script/:/script/
+    ports:
+       - "9999:80"
+       - "2222:22"
+       - "2233:23"
+    links:
+      - database
+    tty: true
+    working_dir: /opt/phabricator/
+    command: sh -c "/script/init.sh"
+  database:
+    image: mariadb:10.2
+    volumes:
+       - ./data/db-data/:/var/lib/mysql
+    ports:
+      - 3366:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+volumes:
+  repo:
+  config:
+  extensions:
+  db-data:
